@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:merendero_suyapa/presentation/add_invoice.dart';
-import 'package:merendero_suyapa/view_invoice.dart';
+import 'package:merendero_suyapa/presentation/view_invoice.dart';
 
 class Invoices extends StatelessWidget {
   final String client;
