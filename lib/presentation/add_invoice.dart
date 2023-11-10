@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:merendero_suyapa/presentation/widgets/card_information_product.dart';
 
 class AddInvoice extends StatefulWidget {
   final String client;
@@ -136,70 +137,32 @@ class _DetailsState extends State<Details> {
               const SizedBox(
                 height: 15,
               ),
-              Column(
+              const Column(
                 children: [
-                  const Text(
+                  Text(
                     'Informacion de factura',
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 15,
                   ),
-                  DataTable(
-                    columns: const <DataColumn>[
-                      DataColumn(
-                        label: Text(
-                          'Cantidad',
-                          style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Expanded(
-                          child: Text(
-                            'Producto',
-                            style: TextStyle(fontStyle: FontStyle.italic),
-                          ),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'Precio',
-                          style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'Total',
-                          style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      )
-                    ],
-                    rows: const <DataRow>[
-                      DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('2')),
-                          DataCell(Text('Baleada con huevo y aguacate')),
-                          DataCell(Text('25')),
-                          DataCell(Text('50')),
-                        ],
-                      ),
-                      DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('1')),
-                          DataCell(Text('Coca COla')),
-                          DataCell(Text('25')),
-                          DataCell(Text('25')),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
+                  CardInformationProduct(
+                  productName: 'Baleadas con huevo', 
+                  quantity: 2, 
+                  price: 25, 
+                  total: 50,),
+                  CardInformationProduct(
+                  productName: 'Baleadas con pollo', 
+                  quantity: 1, 
+                  price: 30, 
+                  total: 30,),
+                  SizedBox(
                     height: 20,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
@@ -236,3 +199,5 @@ class _DetailsState extends State<Details> {
     );
   }
 }
+
+
